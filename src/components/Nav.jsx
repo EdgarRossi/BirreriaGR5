@@ -1,22 +1,18 @@
 import React from 'react';
-import Logo from '../img/birra.jpeg';
-import SerchBar from './SerchBar';
+import s from "./Nav.module.css";
 
 function Nav({getBirreria}) {
   return (
-    <div>
+    <div className={s.navbar}>
         <nav>
-            <div>
-                <img src={Logo} alt='la birra'/>
-            </div>
-            <ul>
-                <li><button onClick={()=>getBirreria()}>Inicio</button></li>
+            {/* <img src={Logo} alt='la birra'/> */}
+            <ul className={s.menubar}>
+                <li>Categorias</li>
                 <li>Productos</li>
+                <li><button className={s.button} onClick={()=>getBirreria()}></button></li>
                 <li>Nosotros</li>
+                <li>Contacto</li>
             </ul>
-            <div>
-                <SerchBar />
-            </div>
         </nav>
     </div>
   )

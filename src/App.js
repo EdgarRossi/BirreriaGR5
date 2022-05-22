@@ -1,8 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import Nav from './components/Nav';
 import { useState } from 'react';
 import CardsBirra from './components/CardsBirra';
+import SearchBar from './components/SearchBar'
+import backgroundvideo from './img/beer-background.mp4'
 
 function App() {
 
@@ -23,11 +24,13 @@ function App() {
 
 
   return (
-   <div>
+   <div className='App'>
+     <video autoPlay muted loop className="myVideo">
+        <source src={backgroundvideo} type="video/mp4"/>
+      </video>
      <Nav getBirreria={getBirreria}/>
-     <div>
-       <CardsBirra Birra={Birra}/>
-     </div>
+     <CardsBirra Birra={Birra}/>
+     <SearchBar />
    </div>
   );
 }
